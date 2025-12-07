@@ -1,14 +1,22 @@
-name: Exercice 2
-
+name: ex_job_1
 on:
-  pull_request:
-    paths:
-    - '**.yml'
-    - '!**/test/**.yml'
-
+  push: main
 jobs:
-  job_ex1:
-    runs-on: ubuntu-latest
-
-    steps:
-    - run : echo "Je vérifie les fichiers YAML"
+  job1: 
+  runs-on: ubuntu-latest
+  steps:
+  - run: echo "Bonjour"
+  job2:
+  needs: job1
+  runs-on: ubuntu-latest
+  steps:
+  - run: echo "Comment"
+  job3: 
+  needs: [job1,job2]
+  runs-on: ubuntu-latest
+  steps:
+  - run: echo "allez"
+  job4: 
+  runs-on: ubuntu-latest
+  steps:
+  - run: echo "vous ?"
