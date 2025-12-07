@@ -1,6 +1,7 @@
 name: ex_job_1
 on:
-  push: main
+  push: 
+    branch: main
 jobs:
   job1: 
   runs-on: ubuntu-latest
